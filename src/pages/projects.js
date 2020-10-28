@@ -7,6 +7,8 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Card from 'components/Card';
 import Title from 'components/Title';
+import Footer from '../components/Footer/Footer';
+
 
 export const queryImage =  graphql`
 query {
@@ -42,22 +44,20 @@ const Projects = ({data }) =>(
        description="Front end developer, developing apps and web pages"
      keywords="React, Node, Gatsby, front end, developer, API"
     />    
-    <section className="section is-size-4-desktop is-size-5-touch">    
+    <section className="section is-size-4-desktop is-size-5-touch">      
     <Title>Linha Gourmet</Title>
-    <p className="has-text-centered" >
-      
-    Doces sob encomenda, consulte valores.
-      
-    </p>
-
-      <div className="columns is-centered" >
-      <div className="column is-half is-offset-one-quarter"> 
+    
+    <p className="title  has-text-light has-text-centered " >Doces sob encomenda, consulte valores</p>
+   
+          
+      <div className="column is-half "> 
       <Card 
       title= "Chocolates Gourmet"
       subtitle= "Acoçamos sua vida"
       link= "https://www.instagram.com/docesdabeta.cps/"
       tags={['Entre']}
-      image= { <Img fixed={data.project1.childImageSharp.fixed} alt=''/> }       
+      image= { <Img fixed={data.project1.childImageSharp.fixed} alt=''/> }    
+         
       />
        <Card 
       title= "kassel Labs"
@@ -74,14 +74,10 @@ const Projects = ({data }) =>(
       image= { <Img fixed={data.project3.childImageSharp.fixed} alt=''/> }       
       /> 
        </div>
-       </div> 
-       <p className="has-text-centered" >
-       Voltar para 
-         {' '}
-         <Link to="/blog" >blog</Link>
-        .          
-         </p>       
+      
+            
   </section>
+  <Footer/>
       </Layout>
    );
 

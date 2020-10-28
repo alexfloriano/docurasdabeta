@@ -1,10 +1,10 @@
 $family-primary:'Droid Sans Mono for Powerline';
 
-$editor-background: #181818;
-$editor-foreground: #d4d4d4;
+$background: #ffffff;
+$foreground: #000000;
 $editor-activity-bar-badge: #007acc;
-$editor-menu-background: #202021;
-$editor-unselected-tab: #292929;
+$menu-background: #ffffff;
+$editor-unselected-tab: #800606;
 $editor-menu-icon: #c7c6c8;
 $editor-menu-icon-active: #fff;
 
@@ -17,22 +17,22 @@ $editor-regex:#d16969;
 $editor-regex-quantifier:#d7ba7d;
 $editor-constant:#569cd6;
 
-$body-background-color: $editor-background;
-$text: $editor-foreground;
+$body-background-color: $background;
+$text: $foreground;
 $link: $editor-activity-bar-badge;
 $link-hover: $editor-constant;
 $white-ter: $text;
 $yellow: $editor-property;
 
-$navbar-background-color: $editor-menu-background;
-$navbar-item-color: $editor-foreground;
-$navbar-item-hover-color: $editor-foreground;
+$navbar-background-color: $menu-background;
+$navbar-item-color: $foreground;
+$navbar-item-hover-color: $foreground;
 $navbar-item-hove-background-color: $editor-unselected-tab;
 $navbar-burger-color: $navbar-item-color;
 
 $card-background-color: $editor-unselected-tab;
-$card-hover-color: rgba($editor-foreground, .15);
-$tag-color:$editor-foreground;
-$tag-background-color: $editor-menu-background;
+$card-hover-color: rgba($foreground, .15);
+$tag-color:$foreground;
+$tag-background-color: $menu-background;
 $tag-radius: 0;
 

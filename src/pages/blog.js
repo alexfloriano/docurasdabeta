@@ -7,6 +7,7 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Card from 'components/Card';
 import Title from "../components/Title";
+import Footer from '../components/Footer/Footer';
 
 export const queryImage =  graphql`
 query {
@@ -38,54 +39,37 @@ const Blog = ({data }) =>(
     <section className="section is-size-4-desktop is-size-5-touch">
     
     <Title>Quem Somos</Title>
-    <p>Desde 2013 no mercado trabalhando com ingredientes de qualidade
+    <h4>
+      Sobre 
+    </h4>
+    <h5>Desde 2013 no mercado trabalhando com ingredientes de qualidade
       e muita dedicação em cada produto.
-      Sua satisfação é nossa meta!!!
-    </p>
-    <p className="has-text-centered" >      
+     <h5 >Sua satisfação é nossa meta!!!</h5>      
+     
+     </h5>
+    <h5 className="" >      
       Acompanhe nossa pagina em  
+       
         {' '}
-        <a href= "https://br.linkedin.com/in/alex-floriano-4b147679" >
-            Linkedin  
-        </a> 
-        {' '} 
-        e
-        {' '}
-        <a href= "https://www.facebook.com/alex.floriano.37" >
+        <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" >
         Facebook
         </a> 
         {' '}
         para saber mais sobre
         {' . '}
-        </p>
-
-      <div className="columns is-centered" >
-      <div className="column is-half is-offset-one-quarter"> 
-      <Card 
-      title= "Club Oficial Gol GT"
-      subtitle= "Página dedicada a este esportivo nacional da década de 80! Gol Gt isso diz tudo."
-      link= "https://www.instagram.com/golgtclube/?hl=pt"
-      tags={['Gol GT 1.8']}
-      image= { <Img fixed={data.post1.childImageSharp.fixed} alt='Gatsby Course'/> }       
-      />
-       <Card 
-      title= "kassel Labs"
-      subtitle= "Alex Floriano e Nihey Takizawa, do Kassel Labs , fizeram isso novamente. Depois de encontrar muito sucesso com seu Star Wars Intro Creator "
-      link= "https://kassellabs.io/"
-      tags={['Entre']}
-      image= { <Img fixed={data.post2.childImageSharp.fixed} alt=''/> }       
-      />       
-    </div>
-</div> 
-
-<p className="has-text-centered" >
-       Entre
+        </h5>
+       Fale conosco
          {' '}
-         <Link to="/stack" >stack</Link>
-        .          
-         </p>  
+         <Link to="/stack" >Entre</Link> 
+         {' '}
+          <h5>Nosso parceiro <a href="https://www.boxpressembalagens.com.br/">   
+          boxpressembalagens          
+           </a>
+           </h5>  
+         
           
   </section>
+  <Footer/>
       </Layout>
    );
 

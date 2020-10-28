@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Doçuras da Betas',
+   title: 'Doçuras da Betas',
     author:'Alex Floriano',
    siteUrl:'https://luanorlandi.github.io/',
   },
