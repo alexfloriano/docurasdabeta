@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { graphql, Link }from 'gatsby';
-import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
-import Card from 'components/Card';
+
 import Title from "../components/Title";
 import Footer from '../components/Footer/Footer';
 

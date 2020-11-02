@@ -9,7 +9,7 @@ exports.components = {
   "component---src-pages-404-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/404.js"))),
   "component---src-pages-blog-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/blog.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/index.js"))),
-  "component---src-pages-projects-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/projects.js"))),
+  "component---src-pages-produtos-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/produtos.js"))),
   "component---src-pages-stack-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/stack.js")))
 }
 

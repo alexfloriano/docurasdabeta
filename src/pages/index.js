@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link , StaticQuery, graphql} from 'gatsby';
-import Img from 'gatsby-image';
+
+
 import fotodacapa from '../assets/images/Gourmet.png';
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -30,7 +30,7 @@ const Home = () => (
       {` Aceitamos encomendas para festas e eventos comemorativos 🍬🍫🍯🐝  
          `}
          </h4>         
-    <img className="photo image is-120x120" style={{width:'30%' }}  src= {fotodacapa}/> 
+    <img className="photo image is-120x120" style={{width:'30%' }}  src= {fotodacapa} alt="logotipo"/> 
     <div className="has-text-centered">    
     <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" aria-label="facebook">
       <span className=" icon is-large fa-3x" >

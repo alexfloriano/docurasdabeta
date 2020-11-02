@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 import logo from '../assets/images/logo.jpeg';
-import Footer from '../components/Footer/Footer';
+
 
 class Header extends Component {
   state = {
     isMenuOpen: false,
+    
   }
     handleMenu =() =>{
       this.setState(previousState  => ({ 
@@ -19,7 +20,7 @@ class Header extends Component {
     }
 
   render =() =>{
-    const {siteTitle} = this.props;
+    
     const { isMenuOpen} =this.state;
     const burgerClass = isMenuOpen ?'is-active':'';
 
@@ -30,7 +31,7 @@ class Header extends Component {
         <div className="navbar-brand" >
           <Link className="navbar-item is-size-4" to="/">  
 
-            <img src= {logo}></img>
+            <img src= {logo} alt="logotipo"></img>
            
           </Link>  
 
@@ -60,7 +61,7 @@ class Header extends Component {
               </Link>
               <Link
               className="navbar-item is-size-5"              
-              to="/projects"
+              to="/produtos"
               onClick={this.closeMenu}
              
               >
@@ -68,7 +69,7 @@ class Header extends Component {
               </Link>
               <Link
               className="navbar-item is-size-5"
-              to="/projects"
+              to="/produtos"
               onClick={this.closeMenu}
               >
               Linha Gourmet              
