@@ -5,11 +5,11 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/.cache/dev-404-page.js"))),
-  "component---src-pages-404-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/src/pages/404.js"))),
-  "component---src-pages-blog-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/src/pages/blog.js"))),
-  "component---src-pages-index-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/src/pages/index.js"))),
-  "component---src-pages-produtos-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/src/pages/produtos.js"))),
-  "component---src-pages-stack-js": hot(preferDefault(require("/home/bordi/projects/docurasdabeta/src/pages/stack.js")))
+  "component---cache-dev-404-page-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/.cache/dev-404-page.js"))),
+  "component---src-pages-404-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/404.js"))),
+  "component---src-pages-blog-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/blog.js"))),
+  "component---src-pages-index-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/index.js"))),
+  "component---src-pages-produtos-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/produtos.js"))),
+  "component---src-pages-stack-js": hot(preferDefault(require("/home/alex/projeto/docurasdabeta/src/pages/stack.js")))
 }
 
