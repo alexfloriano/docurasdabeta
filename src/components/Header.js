@@ -62,23 +62,25 @@ class Header extends Component {
               <Link
               className="navbar-item is-size-5"              
               to="/produtos"
-              onClick={this.closeMenu}
-             
+              onClick={this.closeMenu}             
               >
+
               Produtos              
               </Link>
               <Link
               className="navbar-item is-size-5"
-              to="/produtos"
+              to="/produtosgourmet"
               onClick={this.closeMenu}
               >
+
               Linha Gourmet              
               </Link> 
               <Link
               className="navbar-item is-size-5"
-              to="/blog"
+              to="/produtosgourmet"
               onClick={this.closeMenu}
               >
+                
               Quem Somos            
               </Link>
               <Link
@@ -86,15 +88,13 @@ class Header extends Component {
               to="/stack"
               onClick={this.closeMenu}
               >                
-              Contato                                 
+              Contato                               
                       
               </Link>
-
            </div>
          </div> 
       </div>
     </nav>
-
     );
   }
 }

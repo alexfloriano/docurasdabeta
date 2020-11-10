@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
+import firebase from "gatsby-plugin-firebase"
 import 'firebase/firestore';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+//import Img from 'gatsby-image';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Card from 'components/Card';
@@ -49,11 +50,7 @@ const Produtos = ({ data }) => {
   const [produtos, setProdutos] = useState([]);
   console.log(produtos);
   useEffect(
-    () => {
-      // inicializando o banco de dados firebase.
-      firebase.initializeApp(
-        firebaseConfig,
-      );
+    () => {      
       // lendo o banco de dados firebase.
       firebase.firestore().collection('produtos').get()
         .then((snapshot) => {
@@ -77,7 +74,7 @@ const Produtos = ({ data }) => {
       <SEO pageTitle="Linha Gourmet" description="Front end developer, developing apps and web pages"
         keywords="React, Node, Gatsby, front end, developer, API" />
       <section className="section is-size-4-desktop is-size-5-touch" >
-        <Title>Linha Gourmet</Title>
+        <Title>Produtos</Title>
         <p className="title  has-text-light has-text-centered " > Doces sob encomenda, consulte valores </p>
         <div className="column is-half " >
           {

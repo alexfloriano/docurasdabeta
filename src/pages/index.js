@@ -1,8 +1,5 @@
 import React from 'react';
-
-
 import fotodacapa from '../assets/images/Gourmet.png';
-
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import{
   faFacebook, faInstagram,
