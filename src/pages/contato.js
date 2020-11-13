@@ -1,6 +1,5 @@
 import React from "react";
 import  Helmet  from 'react-helmet';
-
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Footer from '../components/Footer/Footer';
@@ -28,10 +27,7 @@ const Stack = ( ) =>(
             <p className="content" >
             Contatos pelos Whatsapp (19) 998811-9553
             Horário de funcionamento: Segunda à Sexta das 8:00 às 17:00 horas
-            </p>
-            
-
-              
+            </p>              
               <form class="form"method="POST"action="./email.php">
                 <input class="field"name="nome"placeholder="Nome*"/> <br></br>
                 <input class="field" name="telefone" placeholder="Fone*"/> <br></br>                
@@ -39,26 +35,17 @@ const Stack = ( ) =>(
                 <textarea class="field" name=" mensagem"cols="100" rows="10" placeholder="Preencha sua mensagem"></textarea>          
               <div id="botao">                 
                   <input type="submit" name="botao " value="ENVIAR" class="botaoEnviar" />
-
                   <div id="btn">
                     <input type="reset" name="btn" value="LIMPAR" class="btnLimpar" />
                    </div>
-               </div>                     
-                             
-                
-                </form>  
-                
+               </div>                               
+                </form>                
             </div>                
         </section>
-
         </body>
-        <Footer/>
-        
-      </Layout>
-      
+        <Footer/>        
+      </Layout>      
    );
-
-
 export default Stack;
 
 

@@ -46,9 +46,9 @@ const Gourmet = ({ data }) => {
         .then((snapshot) => {
           snapshot.forEach((doc) => {
             console.log(doc.id, '=>', doc.data());
-            let gourmet = doc.data();
-           
-            setGourmet((produtosgourmet) => [...produtosgourmet, gourmet]);
+            let gourmet = doc.data();           
+            //setGourmet((produtosgourmet) => [...produtosgourmet, gourmet]);
+            console.log (produtosgourmet);
           });
         })
         .catch((err) => {
@@ -70,7 +70,8 @@ const Gourmet = ({ data }) => {
         <div className="column is-half " >
           {
             produtosgourmet.map((gourmet) => {
-              return (<Card key={gourmet.nomedoproduto} gourmet={gourmet} />)
+              console.log(gourmet);
+              return (<Card key={gourmet.nomedoproduto} produto={gourmet} />)
             })
           }
         </div>
