@@ -85,7 +85,7 @@ class Header extends Component {
               </Link>
               <Link
               className="navbar-item is-size-5"
-              to="/stack"
+              to="/contato"
               onClick={this.closeMenu}
               >                
               Contato                               

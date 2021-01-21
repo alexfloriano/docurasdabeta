@@ -47,8 +47,9 @@ const Gourmet = ({ data }) => {
           snapshot.forEach((doc) => {
             console.log(doc.id, '=>', doc.data());
             let gourmet = doc.data();           
-            //setGourmet((produtosgourmet) => [...produtosgourmet, gourmet]);
+            setGourmet((produtosgourmet) => [...produtosgourmet, gourmet]);
             console.log (produtosgourmet);
+            
           });
         })
         .catch((err) => {
@@ -56,7 +57,7 @@ const Gourmet = ({ data }) => {
         });
 
     },
-    [],
+    [produtosgourmet]
   );
 
 

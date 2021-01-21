@@ -20,7 +20,9 @@
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@popperjs/core": "^2.6.0",
     "babel-loader": "^8.1.0",
+    "bootstrap": "^4.5.3",
     "bulma": "^0.7.5",
     "firebase": "^8.0.1",
     "firebase-admin": "^9.3.0",
@@ -41,8 +43,10 @@
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-strap": "0.0.1"
   },
   "scripts": {
     "build": "gatsby build",

@@ -11,7 +11,7 @@ import Card from 'components/Card';
 import Title from 'components/Title';
 import Footer from '../components/Footer/Footer';
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyDQIFkvPBps22pqidMhm7ecl4eDWP_W-88",
   authDomain: "docuras-da-beta.firebaseapp.com",
   databaseURL: "https://docuras-da-beta.firebaseio.com",
@@ -19,7 +19,7 @@ const firebaseConfig = {
   storageBucket: "docuras-da-beta.appspot.com",
   messagingSenderId: "238752127009",
   appId: "1:238752127009:web:6d53909b20efd8ac5a2b60"
-};
+};*/
 
 export const queryImage = graphql`
 query {
