@@ -1,17 +1,125 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Helmet from 'react-helmet';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Footer from '../components/Footer/Footer';
+import firebase from "gatsby-plugin-firebase"
+import 'firebase/firestore';
+import { event } from "jquery";
+
 
 
 const Contato = () => {
-  const EnviarMensagem = (event) => {
-    
-    //event.preventDefault();
+  // criamos uma variavel erro , iniciando vazia 
+  const [erro, setErro] = useState({});
+  // criando objeto cliente vazio.
+  const [cliente, setCliente] = useState({
+    nome: "",
+    telefone: "",
+    email: "",
+    mensagem: "",
+  });
 
-    console.log("cliquei no botão")
+  console.log(cliente);
+  const GravarMensagem = (event) => {
+
+    // exibe os dados que o usúario digitou
+    event.preventDefault();
+
+    // criando as variaveis e alocando/vindo os dados do formulario
+    const nome = event.target.nome.value;
+    console.log(nome);
+    const telefone = event.target.fone.value;
+    console.log(telefone);
+    const mensagem = event.target.mensagem.value;
+    const email = event.target.email.value;
+
+    if (!erro) {
+      // grava os dados que o usuario digitou no BD    
+      firebase.firestore().collection('mensagens').add({
+        nome: event.target.nome.value,
+        fone: event.target.fone.value,
+        email: event.target.email.value,
+        mensagem: event.target.mensagem.value,
+      });
+    }else{
+      console.log ("Campo não validos");
+    }
+
+
   }
+  const trataNome = (event) => {
+    const nome = event.target.value;
+    setErro({});
+    if (nome.length === 0) {
+      const erroAuxiliar = { ...erro, nome: "Campo Nome não pode ser vazio!" };
+      setErro(erroAuxiliar);
+    }
+    const cliente = { ...cliente, nome: nome };
+    setCliente(cliente);
+
+
+
+  }
+  const trataFone = (event) => {
+    const fone = event.target.value;
+    setErro({});
+    if (fone.length === 0) {
+      const erroAuxiliar = { ...erro, fone: "Campo Telefone não pode ser vazio!" };
+      setErro(erroAuxiliar);
+    } else {
+      // verifica se o usuário digitou corretamente um numero de telefone.
+      const regexp = /\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
+      //const regexp = /^(?:\+)[0-9]{2}\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
+      if (!regexp.test(fone)) {
+        const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99) 9999-9999" };
+        setErro(erroAuxiliar);
+      };
+    }
+    const cliente = { ...cliente, fone: fone };
+    setCliente(cliente);
+  }
+
+
+
+
+  const trataEmail = (event) => {
+    const email = event.target.value;
+    setErro({});
+
+    if (email.length === 0) {
+      const erroAuxiliar = { ...erro, email: "Campo E-mail não pode ser vazio!" };
+      setErro(erroAuxiliar);
+    } else {
+      const regexpemail = /^[a-z0-9.]+@[a-z0-9.]/i;
+      if (!regexpemail.test(email)) {
+        const erroAuxiliar = { ...erro, email: " digite seu email corretamente. o formato deve ser xxx@xxx.xxx" };
+        setErro(erroAuxiliar);
+      }
+
+    }
+    const cliente = { ...cliente, email: email };
+    setCliente(cliente);
+    console.log(cliente.email);
+  }
+
+
+
+  const trataMensagem = (event) => {
+    const mensagem = event.target.value;
+    setErro({});
+    if (mensagem.length === 0) {
+      const erroAuxiliar = { ...erro, mensagem: "Por favor Deixe sua mensagem conosco!" };
+      setErro(erroAuxiliar);
+    }
+    const cliente = { ...cliente, mensagem: mensagem };
+    setCliente(cliente);
+
+  }
+
+
+
+
   return (
     <Layout>
       <SEO
@@ -32,21 +140,43 @@ const Contato = () => {
         <div className="row">
 
 
-          <form onSubmit={EnviarMensagem} className="form">
+          <form onSubmit={GravarMensagem} className="form">
             <div className="form-group">
-              
-              <input type="text" className="form-control" id="nome" aria-describedby="nome" placeholder="Seu nome" />
+              <input type="text" className="form-control" name="nome" aria-describedby="nome" placeholder="Seu nome" value={cliente.nome} onChange={trataNome} />
+              {erro.nome ?
+                <div class="alert alert-danger" role="alert">
+                  {erro.nome}
+                </div> : null}
             </div>
+
+
             <div className="form-group">
-              
-              <input type="text" className="form-control" id="fone" aria-describedby="fone" placeholder="Seu telefone" />
+              <input type="text" className="form-control" name="fone" aria-describedby="fone" placeholder="(99) 9999-9999" value={cliente.fone} onChange={trataFone} />
+              {erro.fone ?
+                <div class="alert alert-danger" role="alert">
+                  {erro.fone}
+                </div> : null}
             </div>
+
+
             <div className="form-group">
-              
-              <input type="text" className="form-control" id="email" aria-describedby="email" placeholder="Seu e-mail" />
+              <input type="text" className="form-control" name="email" aria-describedby="email" placeholder="Seu e-mail" value={cliente.email} onChange={trataEmail} />
+              {erro.email ?
+                <div class="alert alert-danger" role="alert">
+                  {erro.email}
+                </div> : null}
               <small id="emailHelp" className="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
             </div>
-            <textarea className="field" name=" mensagem" cols="100" rows="10" placeholder="Preencha sua mensagem"></textarea>
+
+
+            <textarea className="field" name="mensagem" cols="100" rows="10" placeholder="Preencha sua mensagem" value={cliente.mensagem} onChange={trataMensagem} >
+            </textarea>
+            {erro.mensagem ?
+              <div class="alert alert-danger" role="alert">
+                {erro.mensagem}
+              </div> : null}
+
+
             <div className="botoes" id="botao">
               <input className="m-1  botaoEnviar" type="submit" name="botao" value="ENVIAR" />
               <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" />
@@ -61,5 +191,4 @@ const Contato = () => {
 };
 
 export default Contato;
-
 
