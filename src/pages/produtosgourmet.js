@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import firebase from "gatsby-plugin-firebase"
 import 'firebase/firestore';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+// import { graphql } from 'gatsby';
 //import Img from 'gatsby-image';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';

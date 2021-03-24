@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Helmet from 'react-helmet';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import Footer from '../components/Footer/Footer';
 import firebase from "gatsby-plugin-firebase"
 import 'firebase/firestore';
-import { event } from "jquery";
+// import { event } from "jquery";
 
 
 
@@ -31,8 +31,8 @@ const Contato = () => {
     console.log(nome);
     const telefone = event.target.fone.value;
     console.log(telefone);
-    const mensagem = event.target.mensagem.value;
-    const email = event.target.email.value;
+    // const mensagem = event.target.mensagem.value;
+    // const email = event.target.email.value;
 
     if (!erro) {
       // grava os dados que o usuario digitou no BD    
@@ -55,8 +55,8 @@ const Contato = () => {
       const erroAuxiliar = { ...erro, nome: "Campo Nome não pode ser vazio!" };
       setErro(erroAuxiliar);
     }
-    const cliente = { ...cliente, nome: nome };
-    setCliente(cliente);
+    const clienteAux = { ...cliente, nome: nome };
+    setCliente(clienteAux);
 
 
 
@@ -76,8 +76,8 @@ const Contato = () => {
         setErro(erroAuxiliar);
       };
     }
-    const cliente = { ...cliente, fone: fone };
-    setCliente(cliente);
+    const clienteAux = { ...cliente, fone: fone };
+    setCliente(clienteAux);
   }
 
 
@@ -98,8 +98,8 @@ const Contato = () => {
       }
 
     }
-    const cliente = { ...cliente, email: email };
-    setCliente(cliente);
+    const clienteAux = { ...cliente, email: email };
+    setCliente(clienteAux);
     console.log(cliente.email);
   }
 
@@ -112,8 +112,8 @@ const Contato = () => {
       const erroAuxiliar = { ...erro, mensagem: "Por favor Deixe sua mensagem conosco!" };
       setErro(erroAuxiliar);
     }
-    const cliente = { ...cliente, mensagem: mensagem };
-    setCliente(cliente);
+    const clienteAux = { ...cliente, mensagem: mensagem };
+    setCliente(clienteAux);
 
   }
 

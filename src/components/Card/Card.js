@@ -2,7 +2,7 @@ import React from 'react';
 //import PropTypes from 'prop-types';
 
 const Card = ({
-  produto,alteraQuantidade,key
+  produto,alteraQuantidade,indice
 }) => (
 
   <div className="card">
@@ -19,7 +19,7 @@ const Card = ({
             R$ {produto.preco.toFixed(2)}
           </p>
           {/* inserir caixa de quantidade de produtos*/}
-          <input id={key} type="text"  className="form-control" name="quantidade" aria-describedby="quantidade" value={produto.quantidade} onChange={alteraQuantidade} 
+          <input id={indice} type="text"  className="form-control" name="quantidade" aria-describedby="quantidade" value={produto.quantidade} onChange={alteraQuantidade} 
          />
         </div>
       </div>
