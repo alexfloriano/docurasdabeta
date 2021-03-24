@@ -10,7 +10,7 @@ import Card from 'components/Card';
 import Title from 'components/Title';
 import Footer from '../components/Footer/Footer';
 
-
+/*
 export const queryImage = graphql`
 query {
   project1: file(relativePath: { eq: "Gourmet.png" }) {
@@ -35,20 +35,20 @@ query {
         }
       } 
   }
-`;
+`;*/
 const Gourmet = ({ data }) => {
   const [produtosgourmet, setGourmet] = useState([]);
-  console.log(produtosgourmet);
+  console.log("produtos ",produtosgourmet);
   useEffect(
     () => {     
       // lendo o banco de dados firebase.
       firebase.firestore().collection('linhagourmet').get()
         .then((snapshot) => {
           snapshot.forEach((doc) => {
-            console.log(doc.id, '=>', doc.data());
+            //console.log(doc.id, '=>', doc.data());
             let gourmet = doc.data();           
             setGourmet((produtosgourmet) => [...produtosgourmet, gourmet]);
-            console.log (produtosgourmet);
+            console.log ("produtos ",produtosgourmet);
             
           });
         })

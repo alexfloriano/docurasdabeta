@@ -11,53 +11,22 @@ import Card from 'components/Card';
 import Title from 'components/Title';
 import Footer from '../components/Footer/Footer';
 
-/*const firebaseConfig = {
-  apiKey: "AIzaSyDQIFkvPBps22pqidMhm7ecl4eDWP_W-88",
-  authDomain: "docuras-da-beta.firebaseapp.com",
-  databaseURL: "https://docuras-da-beta.firebaseio.com",
-  projectId: "docuras-da-beta",
-  storageBucket: "docuras-da-beta.appspot.com",
-  messagingSenderId: "238752127009",
-  appId: "1:238752127009:web:6d53909b20efd8ac5a2b60"
-};*/
 
-export const queryImage = graphql`
-query {
-  project1: file(relativePath: { eq: "Gourmet.png" }) {
-    childImageSharp {
-      fixed(width: 128, height: 128) {
-        ...GatsbyImageSharpFixed
-      }
-    }
-   }  
-    project2: file(relativePath: { eq: "kassellabs.jpg" }) {
-      childImageSharp {
-        fixed(width: 128, height: 128) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-   project3:   file(relativePath: { eq: "maca.jpg" }) {
-        childImageSharp {
-          fixed(width: 128, height: 128) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      } 
-  }
-`;
 const Produtos = ({ data }) => {
-  const [produtos, setProdutos] = useState([]);
-  console.log(produtos);
+  const [produtos, setProdutos] = useState([]); // criando a variavel produtos
+  console.log("produtos ",produtos);
   useEffect(
     () => {      
       // lendo o banco de dados firebase.
       firebase.firestore().collection('produtos').get()
         .then((snapshot) => {
           snapshot.forEach((doc) => {
-            console.log(doc.id, '=>', doc.data());
-            let produto = doc.data();
-            setProdutos((produtos) => [...produtos, produto]);
+           // console.log(doc.id, '=>', doc.data());
+            let produto = doc.data();  
+            produto.quantidade=0;          
+            setProdutos((produtos) => [...produtos, produto]);            
+            console.log("produtos ",produtos);
+            
           });
         })
         .catch((err) => {
@@ -68,6 +37,21 @@ const Produtos = ({ data }) => {
     [],
   );
 
+  const alteraQuantidade = (event) => {
+    const quantidade = event.target.value;   
+   //console.log (event.target)
+   //console.log (quantidade)
+   //console.log(event.target.key)
+   //console.log(produtos)
+   const produtostemp = {...produtos}   
+   produtostemp[0].quantidade = quantidade;
+   console.log(produtostemp)
+    //const produtos = { ...produtos, mensagem: mensagem };
+    console.log(produtos)
+
+    setProdutos(produtostemp);
+
+  }
 
   return (
     <Layout>
@@ -78,8 +62,10 @@ const Produtos = ({ data }) => {
         <p className="title  has-text-light has-text-centered " > Doces sob encomenda, consulte valores </p>
         <div className="column is-half " >
           {
-            produtos.map((produto) => {
-              return (<Card key={produto.nomedoproduto} produto={produto} />)
+            produtos.map(function(produto,index)  {
+              console.log("indice = ",index);
+             console.log("produto = ",produto);
+              return (<Card key={index} produto={produto} alteraQuantidade={alteraQuantidade}/>)
 
             })
           }

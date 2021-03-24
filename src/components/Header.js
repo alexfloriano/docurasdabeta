@@ -31,7 +31,7 @@ class Header extends Component {
         <div className="navbar-brand" >
           <Link className="navbar-item is-size-4" to="/">  
 
-            <img src= {logo} alt="logotipo"></img>
+            <img src= {logo} alt="logotipo" ></img>
            
           </Link>  
 
