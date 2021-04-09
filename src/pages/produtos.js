@@ -19,11 +19,10 @@ const Produtos = ({ data }) => {
       // lendo o banco de dados firebase.
       firebase.firestore().collection('produtos').get()
         .then((snapshot) => {
-          snapshot.forEach((doc) => {
-            // console.log(doc.id, '=>', doc.data());
+          snapshot.forEach((doc) => {            
             let produto = doc.data();
             produto.quantidade = 0;
-            setProdutos((produtos) => [...produtos, produto]);
+            setProdutos((produtos) => [...produtos, produto]);            
           });
         })
         .catch((err) => {
@@ -35,18 +34,10 @@ const Produtos = ({ data }) => {
   );
 
   const alteraQuantidade = (event) => {
-    const quantidade = event.target.value;
-    //console.log (event.target)
-    //console.log (quantidade)
-    const indiceProduto = event.target.id;
-    //console.log(produtos)
-    const produtostemp = [...produtos]
-    console.log("Produtos:",produtos)
+    const quantidade = event.target.value;    
+    const indiceProduto = event.target.id;    
+    const produtostemp = [...produtos]    
     produtostemp[indiceProduto].quantidade = quantidade;
-    console.log("produtos Temp", produtostemp)
-    //const produtos = { ...produtos, mensagem: mensagem };
-    console.log(produtos)
-
     setProdutos(produtostemp);
 
   }
@@ -60,9 +51,7 @@ const Produtos = ({ data }) => {
         <p className="title  has-text-light has-text-centered " > Doces sob encomenda, consulte valores </p>
         <div className="column is-half " >
           {
-            produtos.map(function (produto, index) {
-              // console.log("indice = ", index);
-              // console.log("produto = ", produto);
+            produtos.map(function (produto, index) {              
               return (<Card key={index} indice={index} produto={produto} alteraQuantidade={alteraQuantidade} />)
 
             })

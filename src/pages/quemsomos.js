@@ -57,7 +57,7 @@ const Blog = ({data }) =>(
         </h5>
        Fale conosco
          {' '}
-         <Link to="/stack" >Entre</Link> 
+         <Link to="/contato" >Entre</Link> 
          {' '}
           <h5>Nosso parceiro <a href="https://www.boxpressembalagens.com.br/">   
           boxpressembalagens          

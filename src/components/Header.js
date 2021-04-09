@@ -1,111 +1,91 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'gatsby';
+
+import React, { useState } from "react";
+
+import { Link } from 'gatsby';
 import logo from '../assets/images/logo.jpeg';
 
 
-class Header extends Component {
-  state = {
-    isMenuOpen: false,
-    
+const Header = ({ produtos }) => {
+  console.log("Header",produtos)
+  const [isMenuOpen, setisMenuOpen] = useState(false);
+
+  const handleMenu = () => {
+    setisMenuOpen(!isMenuOpen)
   }
-    handleMenu =() =>{
-      this.setState(previousState  => ({ 
-        isMenuOpen: !previousState.isMenuOpen,
-      }));
-    }
 
-    closeMenu =( ) => {
-      this.setState({ isMenuOpen: false});
-    }
+  const closeMenu = () => {
+    setisMenuOpen(false)
+  }
 
-  render =() =>{
-    
-    const { isMenuOpen} =this.state;
-    const burgerClass = isMenuOpen ?'is-active':'';
 
-    return ( 
-      
-      <nav className="navbar" >
+
+
+  const burgerClass = isMenuOpen ? 'is-active' : '';
+
+  return (
+
+    <nav className="navbar" >
       <div className="container" >
         <div className="navbar-brand" >
-          <Link className="navbar-item is-size-4" to="/">  
-
-            <img src= {logo} alt="logotipo" ></img>
-           
-          </Link>  
-
+          <Link className="navbar-item is-size-4" to="/">
+            <img src={logo} alt="logotipo" ></img>
+          </Link>
           <button
-         
             className={`navbar-burger ${burgerClass}`}
             type="button"
             aria-label="menu"
-            onClick={this.handleMenu}
+            onClick={handleMenu}
           >
-            <span arial-hidden="true"/>
-            <span arial-hidden="true"/>
-            <span arial-hidden="true"/>
-            
+            <span arial-hidden="true" />
+            <span arial-hidden="true" />
+            <span arial-hidden="true" />
           </button>
-         </div>
-       <div className={`navbar-menu ${burgerClass}`}>
+        </div>
+        <div className={`navbar-menu ${burgerClass}`}>
           <div className="navbar-end">
-            
-          <Link
-           
+            <Link
               className="navbar-item is-size-5"
               to="/"
-              onClick={this.closeMenu}
-             >
-              Home
+              onClick={closeMenu}
+            >Home
               </Link>
-              <Link
-              className="navbar-item is-size-5"              
+            <Link
+              className="navbar-item is-size-5"
               to="/produtos"
-              onClick={this.closeMenu}             
-              >
-
-              Produtos              
+              onClick={closeMenu}
+            >Produtos
               </Link>
-              <Link
+            <Link
               className="navbar-item is-size-5"
               to="/produtosgourmet"
-              onClick={this.closeMenu}
-              >
-
-              Linha Gourmet              
-              </Link> 
-              <Link
-              className="navbar-item is-size-5"
-              to="/produtosgourmet"
-              onClick={this.closeMenu}
-              >
-                
-              Quem Somos            
+              onClick={closeMenu}
+            >Linha Gourmet
               </Link>
-              <Link
+            <Link
+              className="navbar-item is-size-5"
+              to="/quemsomos"
+              onClick={closeMenu}
+            >Quem Somos
+              </Link>
+            <Link
               className="navbar-item is-size-5"
               to="/contato"
-              onClick={this.closeMenu}
-              >                
-              Contato                               
-                      
+              onClick={closeMenu}
+            >Contato
               </Link>
-           </div>
-         </div> 
+            <Link
+              className="navbar-item is-size-5"
+              to="/fecharpedido"
+              onClick={closeMenu}
+              produtos={produtos}
+            >Fechar Pedido
+              </Link>
+          </div>
+        </div>
       </div>
     </nav>
-    );
-  }
+  );
 }
 
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
-};
 
 export default Header;

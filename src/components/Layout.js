@@ -1,34 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { BrowserRouter } from 'react-router-dom';
+import ProdutosProvider from "../context/ProdutosProvider";
+
 
 import Header from 'components/Header';
 import 'styles/index.scss';
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+const Layout = ({ children, produtos }) => {
+  console.log("Layout", produtos)
+  return (
+
+    <BrowserRouter>
+      <ProdutosProvider>
+        <Header produtos={produtos} />
         <div className="container">
           {children}
         </div>
-      </>
-    )}
-  />
-);
+      </ProdutosProvider>
+    </BrowserRouter>
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+  )
+}
 
 export default Layout;

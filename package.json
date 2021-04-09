@@ -48,6 +48,7 @@
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "react-router-dom": "^5.2.0",
     "react-strap": "0.0.1"
   },
   "scripts": {
