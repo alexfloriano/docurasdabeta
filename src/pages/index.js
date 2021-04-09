@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 //import { Container,Col,Row } from 'react-strap';
 import fotodacapa1 from '../assets/images/Gourmet.png';
 import fotodacapa2 from '../assets/images/caixinha.jpeg';
@@ -10,17 +10,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Layout from 'components/Layout';
 import SEO from 'components/SEO'
 import Footer from '../components/Footer/Footer';
+import ProdutosProvider from '../context/ProdutosProvider';
 
 const Home = () => {
-  const [prod, setProd] = useState([{"nomeproduto":"trufa","nomeproduto":"bombom"}]);
-  console.log("index",prod);
-  return (
-    <Layout produtos={prod} > 
-      <SEO
-        description="Site do Doçuras da Beta"
-        keywords="Doces,Doçuras da Beta, Alimentação, Chocolates"
 
-      />
+  // const { produtos } = useContext(ProdutosContext);
+  // produtos ? console.log(produtos) : null;
+
+  return (
+    <Layout>
+      <SEO description="Site do Doçuras da Beta" keywords="Doces,Doçuras da Beta, Alimentação, Chocolates" />
       <div className="Container">
         <div className="row">
           <h1 className="has-text-centered">Doçuras da Beta</h1>
@@ -64,10 +63,7 @@ const Home = () => {
         </div>
       </div>
       <section className="section content is-size-4-desktop is-size-5-touch" >
-
         <Footer />
-
-
       </section>
     </Layout>
   )

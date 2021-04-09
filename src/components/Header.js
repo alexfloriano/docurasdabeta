@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import { Link } from 'gatsby';
 import logo from '../assets/images/logo.jpeg';
 
+const Header = () => {
 
-const Header = ({ produtos }) => {
-  console.log("Header",produtos)
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   const handleMenu = () => {
@@ -16,9 +15,6 @@ const Header = ({ produtos }) => {
   const closeMenu = () => {
     setisMenuOpen(false)
   }
-
-
-
 
   const burgerClass = isMenuOpen ? 'is-active' : '';
 
@@ -77,7 +73,6 @@ const Header = ({ produtos }) => {
               className="navbar-item is-size-5"
               to="/fecharpedido"
               onClick={closeMenu}
-              produtos={produtos}
             >Fechar Pedido
               </Link>
           </div>

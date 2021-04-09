@@ -25,3 +25,5 @@
 hosting.*
 
 functions/api/keys/*.json
+
+/.cache
