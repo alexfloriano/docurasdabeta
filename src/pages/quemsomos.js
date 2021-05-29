@@ -60,9 +60,13 @@ const Blog = ({data }) =>(
          <Link to="/contato" >Entre</Link> 
          {' '}
           <h5>Nosso parceiro <a href="https://www.boxpressembalagens.com.br/">   
-          boxpressembalagens          
+          Boxpress Embalagens          
            </a>
-           </h5>  
+           </h5> 
+
+           <a href= " https://web.whatsapp.com/send?phone=55988067156" target="_blank">
+           whatsapp
+              </a>
          
           
   </section>

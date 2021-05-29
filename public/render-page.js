@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("/home/bordi/projects/docurasdabeta/node_modules/@reach/router/index.js"), require("fs"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/concat.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/flatten.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/get.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/isObject.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/merge.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/uniqBy.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
+		module.exports = factory(require("/home/alex/projeto/docurasdabeta/node_modules/@reach/router/index.js"), require("fs"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/concat.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/flatten.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/get.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/isObject.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/merge.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/uniqBy.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["/home/bordi/projects/docurasdabeta/node_modules/@reach/router/index.js", "fs", "/home/bordi/projects/docurasdabeta/node_modules/lodash/concat.js", "/home/bordi/projects/docurasdabeta/node_modules/lodash/flatten.js", "/home/bordi/projects/docurasdabeta/node_modules/lodash/get.js", "/home/bordi/projects/docurasdabeta/node_modules/lodash/isObject.js", "/home/bordi/projects/docurasdabeta/node_modules/lodash/merge.js", "/home/bordi/projects/docurasdabeta/node_modules/lodash/uniqBy.js", "path", "react", "react-dom/server", "react-helmet"], factory);
+		define("lib", ["/home/alex/projeto/docurasdabeta/node_modules/@reach/router/index.js", "fs", "/home/alex/projeto/docurasdabeta/node_modules/lodash/concat.js", "/home/alex/projeto/docurasdabeta/node_modules/lodash/flatten.js", "/home/alex/projeto/docurasdabeta/node_modules/lodash/get.js", "/home/alex/projeto/docurasdabeta/node_modules/lodash/isObject.js", "/home/alex/projeto/docurasdabeta/node_modules/lodash/merge.js", "/home/alex/projeto/docurasdabeta/node_modules/lodash/uniqBy.js", "path", "react", "react-dom/server", "react-helmet"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("/home/bordi/projects/docurasdabeta/node_modules/@reach/router/index.js"), require("fs"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/concat.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/flatten.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/get.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/isObject.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/merge.js"), require("/home/bordi/projects/docurasdabeta/node_modules/lodash/uniqBy.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
+		exports["lib"] = factory(require("/home/alex/projeto/docurasdabeta/node_modules/@reach/router/index.js"), require("fs"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/concat.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/flatten.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/get.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/isObject.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/merge.js"), require("/home/alex/projeto/docurasdabeta/node_modules/lodash/uniqBy.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else
-		root["lib"] = factory(root["/home/bordi/projects/docurasdabeta/node_modules/@reach/router/index.js"], root["fs"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/concat.js"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/flatten.js"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/get.js"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/isObject.js"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/merge.js"], root["/home/bordi/projects/docurasdabeta/node_modules/lodash/uniqBy.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
+		root["lib"] = factory(root["/home/alex/projeto/docurasdabeta/node_modules/@reach/router/index.js"], root["fs"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/concat.js"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/flatten.js"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/get.js"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/isObject.js"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/merge.js"], root["/home/alex/projeto/docurasdabeta/node_modules/lodash/uniqBy.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_fs__, __WEBPACK_EXTERNAL_MODULE_lodash_concat__, __WEBPACK_EXTERNAL_MODULE_lodash_flatten__, __WEBPACK_EXTERNAL_MODULE_lodash_get__, __WEBPACK_EXTERNAL_MODULE_lodash_isObject__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_lodash_uniqBy__, __WEBPACK_EXTERNAL_MODULE_path__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -111,7 +111,8 @@ const { hot } = __webpack_require__(/*! react-hot-loader/root */ "./node_modules
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": hot(preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js"))),
-  "component---src-pages-index-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")))
+  "component---src-pages-index-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js"))),
+  "component---src-pages-produtos-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/produtos.js */ "./src/pages/produtos.js")))
   }
 
 
@@ -144,7 +145,7 @@ var plugins = [{
     "include_favicon": true,
     "legacy": true,
     "theme_color_in_head": true,
-    "cacheDigest": "46c6b32d1d519da759c0206e7ed8e33a"
+    "cacheDigest": "040d1ccf1483450d01926285c371d093"
   }
 }, {
   plugin: __webpack_require__(/*! ./gatsby-ssr */ "./gatsby-ssr.js"),
@@ -62707,6 +62708,70 @@ module.exports = __webpack_require__.p + "static/logo-467dd9d7e7a4a1d69cb62ba8ab
 
 /***/ }),
 
+/***/ "./src/components/Card/Card.js":
+/*!*************************************!*\
+  !*** ./src/components/Card/Card.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ //import PropTypes from 'prop-types';
+
+const Card = ({
+  produto,
+  alteraQuantidade,
+  indice
+}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "card"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "card-content"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "media"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "media-left"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  src: produto.url_daimagem,
+  alt: "some text"
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  className: "media-content"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+  className: "title is-size-5-desktop is-size-6-touch has-text-light"
+}, produto.nomedoproduto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  className: "subtitle is-size-5-desktop is-size-6-touch has-text-light"
+}, "R$ ", produto.preco.toFixed(2)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  id: indice,
+  type: "text",
+  className: "form-control",
+  name: "quantidade",
+  "aria-describedby": "quantidade",
+  value: produto.quantidade,
+  onChange: alteraQuantidade
+})))));
+
+/* harmony default export */ __webpack_exports__["default"] = (Card);
+
+/***/ }),
+
+/***/ "./src/components/Card/index.js":
+/*!**************************************!*\
+  !*** ./src/components/Card/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Card */ "./src/components/Card/Card.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Card__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/components/Footer/Footer.css":
 /*!******************************************!*\
   !*** ./src/components/Footer/Footer.css ***!
@@ -63108,6 +63173,17 @@ const NotFoundPage = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___defau
 
 /***/ }),
 
+/***/ "./src/pages/index.css":
+/*!*****************************!*\
+  !*** ./src/pages/index.css ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./src/pages/index.js":
 /*!****************************!*\
   !*** ./src/pages/index.js ***!
@@ -63127,10 +63203,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/Layout */ "./src/components/Layout.js");
-/* harmony import */ var components_SEO__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/SEO */ "./src/components/SEO.js");
-/* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Footer/Footer */ "./src/components/Footer/Footer.js");
-/* harmony import */ var _context_ProdutosProvider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../context/ProdutosProvider */ "./src/context/ProdutosProvider.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.css */ "./src/pages/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var components_SEO__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/SEO */ "./src/components/SEO.js");
+/* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Footer/Footer */ "./src/components/Footer/Footer.js");
  //import { Container,Col,Row } from 'react-strap';
 
 
@@ -63141,12 +63218,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ //import ProdutosProvider from '../context/ProdutosProvider';
 
 const Home = () => {
   // const { produtos } = useContext(ProdutosContext);
   // produtos ? console.log(produtos) : null;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SEO__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SEO__WEBPACK_IMPORTED_MODULE_8__["default"], {
     description: "Site do Do\xE7uras da Beta",
     keywords: "Doces,Do\xE7uras da Beta, Alimenta\xE7\xE3o, Chocolates"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -63186,24 +63263,91 @@ const Home = () => {
     className: "has-text-centered"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018",
+    target: "_blank",
     "aria-label": "facebook"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: " icon is-large fa-3x"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
     icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faFacebook"]
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    class: "instagram",
     href: "https://www.instagram.com/docesdabeta.cps/",
+    target: "_blank",
     "aria-label": "instagram"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: " icon is-large fa-3x"
+    className: " instagram icon is-large fa-3x"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
     icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faInstagram"]
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    class: "whatsapp",
+    href: " https://web.whatsapp.com/send?phone=5519988067156",
+    target: "_blank",
+    "aria-label": "instagram"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "whatsapp icon is-large fa-3x"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
+    icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faWhatsapp"]
   }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "section content is-size-4-desktop is-size-5-touch"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_9__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./src/pages/produtos.js":
+/*!*******************************!*\
+  !*** ./src/pages/produtos.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var components_SEO__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/SEO */ "./src/components/SEO.js");
+/* harmony import */ var components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/Card */ "./src/components/Card/index.js");
+/* harmony import */ var components_Title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/Title */ "./src/components/Title/index.js");
+/* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer/Footer */ "./src/components/Footer/Footer.js");
+/* harmony import */ var _context_ProdutosProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../context/ProdutosProvider */ "./src/context/ProdutosProvider.js");
+
+
+
+
+
+
+
+
+const Produtos = () => {
+  const {
+    produtos,
+    alteraQuantidade
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_ProdutosProvider__WEBPACK_IMPORTED_MODULE_6__["ProdutosContext"]); // console.log("produtos", produtos);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_SEO__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    pageTitle: "Linha Gourmet",
+    description: "Front end developer, developing apps and web pages",
+    keywords: "React, Node, Gatsby, front end, developer, API"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "section is-size-4-desktop is-size-5-touch"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Title__WEBPACK_IMPORTED_MODULE_4__["default"], null, "Produtos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "title  has-text-light has-text-centered "
+  }, " Doces sob encomenda, consulte valores "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "column is-half "
+  }, produtos.map(function (produto, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: index,
+      indice: index,
+      produto: produto,
+      alteraQuantidade: alteraQuantidade
+    });
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Produtos);
 
 /***/ }),
 
@@ -63219,9 +63363,9 @@ const Home = () => {
 /***/ }),
 
 /***/ "@reach/router":
-/*!*****************************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/@reach/router/index.js" ***!
-  \*****************************************************************************************/
+/*!***************************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/@reach/router/index.js" ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63241,9 +63385,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_fs__;
 /***/ }),
 
 /***/ "lodash/concat":
-/*!***********************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/concat.js" ***!
-  \***********************************************************************************/
+/*!*********************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/concat.js" ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63252,9 +63396,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_lodash_concat__;
 /***/ }),
 
 /***/ "lodash/flatten":
-/*!************************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/flatten.js" ***!
-  \************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/flatten.js" ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63263,9 +63407,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_lodash_flatten__;
 /***/ }),
 
 /***/ "lodash/get":
-/*!********************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/get.js" ***!
-  \********************************************************************************/
+/*!******************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/get.js" ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63274,9 +63418,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_lodash_get__;
 /***/ }),
 
 /***/ "lodash/isObject":
-/*!*************************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/isObject.js" ***!
-  \*************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/isObject.js" ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63285,9 +63429,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_lodash_isObject__;
 /***/ }),
 
 /***/ "lodash/merge":
-/*!**********************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/merge.js" ***!
-  \**********************************************************************************/
+/*!********************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/merge.js" ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -63296,9 +63440,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_lodash_merge__;
 /***/ }),
 
 /***/ "lodash/uniqBy":
-/*!***********************************************************************************!*\
-  !*** external "/home/bordi/projects/docurasdabeta/node_modules/lodash/uniqBy.js" ***!
-  \***********************************************************************************/
+/*!*********************************************************************************!*\
+  !*** external "/home/alex/projeto/docurasdabeta/node_modules/lodash/uniqBy.js" ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

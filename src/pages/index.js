@@ -4,13 +4,14 @@ import React from "react";
 import fotodacapa1 from '../assets/images/Gourmet.png';
 import fotodacapa2 from '../assets/images/caixinha.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, } from '@fortawesome/free-brands-svg-icons';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
 
 import Layout from 'components/Layout';
 import SEO from 'components/SEO'
 import Footer from '../components/Footer/Footer';
-import ProdutosProvider from '../context/ProdutosProvider';
+//import ProdutosProvider from '../context/ProdutosProvider';
 
 const Home = () => {
 
@@ -49,18 +50,24 @@ const Home = () => {
         </div>
 
         <div className="has-text-centered">
-          <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" aria-label="facebook">
+          <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" target="_blank" aria-label="facebook">
             <span className=" icon is-large fa-3x" >
               <FontAwesomeIcon icon={faFacebook} />
             </span>
           </a>
-          <a href="https://www.instagram.com/docesdabeta.cps/" aria-label="instagram">
-            <span className=" icon is-large fa-3x" >
+          <a class="instagram" href="https://www.instagram.com/docesdabeta.cps/" target="_blank" aria-label="instagram">
+            <span className=" instagram icon is-large fa-3x" >
               <FontAwesomeIcon icon={faInstagram} />
             </span>
           </a>
+          <a class="whatsapp" href=" https://web.whatsapp.com/send?phone=5519988067156" target="_blank" aria-label="instagram">
+            <span className="whatsapp icon is-large fa-3x" >
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </span>
+          </a>
 
-        </div>
+
+       </div>
       </div>
       <section className="section content is-size-4-desktop is-size-5-touch" >
         <Footer />

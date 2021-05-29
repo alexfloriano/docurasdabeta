@@ -69,16 +69,16 @@ const Contato = () => {
       setErro(erroAuxiliar);
     } else {
       // verifica se o usuário digitou corretamente um numero de telefone.
-      const regexp = /\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
-      //const regexp = /^(?:\+)[0-9]{2}\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
+      //const regexp = /\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
+      const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
       if (!regexp.test(fone)) {
-        const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99) 9999-9999" };
+        const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99)9999-9999" };
         setErro(erroAuxiliar);
       };
     }
     const clienteAux = { ...cliente, fone: fone };
     setCliente(clienteAux);
-  }
+  } 
 
 
 
