@@ -1,7 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect} from "react";
 import Layout from 'components/Layout';
 import Footer from '../components/Footer/Footer';
 import ProdutosProvider, { ProdutosContext } from '../context/ProdutosProvider';
+import firebase from "gatsby-plugin-firebase";
+
+
+
+
+
 
 // criar função fechar pedido
 const FecharPedido = () => {
@@ -12,6 +18,22 @@ const FecharPedido = () => {
         email: "",        
       });
 const [erro, setErro] = useState({});
+
+const [mensagem, setMensagem] = useState ();
+
+  // criamos uma variavel pedido, iniciando vazia 
+  
+  //const [pedido, setPedido] = useState({});
+  // criando objeto cliente vazio.
+  const [pedido, setPedido] = useState({
+    //nome do cliente: ,
+    telefone: "",
+    email: "",
+    mensagem: "",
+  });
+
+
+
 
     const { produtos, alteraquantidade } = useContext(ProdutosContext);
     //console.log(produtos);
@@ -37,20 +59,26 @@ const [erro, setErro] = useState({});
         const nome = event.target.nome.value;
         console.log("enviarpedido");
         const telefone = event.target.fone.value;
-        const email = event.target.email.value;        
+        const email = event.target.email.value;
+        setPedido({
+          nomeCliente : nome,
+          telefoneCliente : telefone,
+          emailCliente : email,
+          produtos : produtos
+        });  
+        console.log (pedido);   
        
     
-       /* if (!erro) {
+        if (erro) {
           // grava os dados que o usuario digitou no BD    
-          firebase.firestore().collection('mensagens').add({
-            nome: event.target.nome.value,
-            fone: event.target.fone.value,
-            email: event.target.email.value,
-            mensagem: event.target.mensagem.value,
-          });
+          firebase.firestore().collection('pedidos').add(pedido);
+          alert ("pedido enviado com sucesso");
+          console.log("Pedido Armazenado com Sucesso!!!");
         }else{
           console.log ("Campo não validos");
-       } */     
+          console.log(erro);
+          
+       }    
     
       }
 

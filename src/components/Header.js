@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-
+import "./Header.css";
 import { Link } from 'gatsby';
 import logo from '../assets/images/logo.jpeg';
 
@@ -23,8 +23,8 @@ const Header = () => {
     <nav className="navbar" >
       <div className="container" >
         <div className="navbar-brand" >
-          <Link className="navbar-item is-size-4" to="/">
-            <img src={logo} alt="logotipo" ></img>
+          <Link className="navbar-item " to="/">
+            <img className = "logo" src={logo} alt="logotipo" ></img>
           </Link>
           <button
             className={`navbar-burger ${burgerClass}`}
@@ -52,12 +52,12 @@ const Header = () => {
             >Produtos
               </Link>
             <Link
-              className="navbar-item is-size-5"
-              to="/produtosgourmet"
-              onClick={closeMenu}
-            >Linha Gourmet
-              </Link>
-            <Link
+             // className="navbar-item is-size-5"
+            //  to="/produtosgourmet"
+             // onClick={closeMenu}
+           // >Linha Gourmet
+              //</Link>
+           // <Link
               className="navbar-item is-size-5"
               to="/quemsomos"
               onClick={closeMenu}

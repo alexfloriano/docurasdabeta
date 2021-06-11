@@ -3,5 +3,17 @@
     background-color: #25d366;   
     color: #fff;
     text-align: center;
-    border-radius: 70px;
+    border-radius: 70px;    
     }
+.textoCentralizado{
+    margin: 0px auto;
+}
+.imagem{
+    margin: 5px;
+}
+.fotosHome{
+    margin: 0px auto;
+}
+.marrom{
+    color: brown;
+}
