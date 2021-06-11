@@ -9,7 +9,7 @@ const FecharPedido = () => {
   const [pedidototal, setPedidoTotal] = useState(0);
   const [cliente, setCliente] = useState({
     nome: "",
-    telefone: "",
+    fone: "",
     email: "",
   });
   const [erro, setErro] = useState({});
@@ -20,7 +20,7 @@ const FecharPedido = () => {
   // criando objeto cliente vazio.
   const [pedido, setPedido] = useState({
     //nome do cliente: ,
-    telefone: "",
+    fone: "",
     email: "",
     mensagem: "",
   });
@@ -41,33 +41,34 @@ const FecharPedido = () => {
     console.log(soma);
   }
   const EnviarPedido = (event) => {
-
+    console.log("Erro:", erro);
     // exibe os dados que o usúario digitou
     event.preventDefault();
-
     // criando as variaveis e alocando/vindo os dados do formulario
     const nome = event.target.nome.value;
-    console.log("enviarpedido");
-    const telefone = event.target.fone.value;
+    const fone = event.target.fone.value;
     const email = event.target.email.value;
-    setPedido({
+    const pedidoAux = {
       nomeCliente: nome,
-      telefoneCliente: telefone,
+      telefoneCliente: fone,
       emailCliente: email,
       produtos: produtos
-    });
-    console.log(pedido);
+    };
+    firebase.firestore().collection('pedidos').add(pedidoAux)
+      .then(() => {
+        alert("pedido enviado com sucesso");
+        console.log("Pedido Armazenado com Sucesso!!!");
+        setCliente({
+          nome: "",
+          fone: "",
+          email: "",
+        });
 
-
-    if (erro) {
-      // grava os dados que o usuario digitou no BD    
-      firebase.firestore().collection('pedidos').add(pedido);
-      alert("pedido enviado com sucesso");
-      console.log("Pedido Armazenado com Sucesso!!!");
-    } else {
-      console.log("Campo não validos");
-      console.log(erro);
-    }
+      })
+      .catch((err) => {
+        console.log("Problema para armazenar os dados no banco de dados.");
+        console.log(err);
+      });
   }
 
   const trataNome = (event) => {
@@ -89,13 +90,18 @@ const FecharPedido = () => {
       setErro(erroAuxiliar);
     } else {
       // verifica se o usuário digitou corretamente um numero de telefone.
-      const regexp = /^([1-9]{2})(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/;
+      // const regexp = /^([1-9]{2})(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/;
+      // const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
+      const regexp = /^(\([1-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$/
+
       if (!regexp.test(fone)) {
         const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99) 9999-9999" };
         setErro(erroAuxiliar);
       };
     }
     const clienteAux = { ...cliente, fone: fone };
+    console.log(clienteAux);
+    console.log(erro);
     setCliente(clienteAux);
   }
 
@@ -122,17 +128,17 @@ const FecharPedido = () => {
     <Layout>
       <h2>Meu Carrinho</h2>
       <p>Confira os produtos adicionados</p>
-      <table class="table table-bordered">
+      <table className="table table-bordered table-striped">
         <tr>
-          <td>
+          <th>
             Nome do Produto
-          </td>
-          <td>
+          </th>
+          <th>
             Quantidade
-          </td>
-          <td>
+          </th>
+          <th>
             Preço
-          </td>
+          </th>
         </tr>
         {produtos.map(function (produto, index) {
           let html = produto.quantidade > 0 ?
@@ -172,7 +178,7 @@ const FecharPedido = () => {
         <div className="form-group">
           <input type="text" className="form-control" name="fone" aria-describedby="fone" placeholder="(99) 9999-9999" value={cliente.fone} onChange={trataFone} />
           {erro.fone ?
-            <div class="alert alert-danger" role="alert">
+            <div className="alert alert-danger" role="alert">
               {erro.fone}
             </div> : null}
         </div>
@@ -196,7 +202,7 @@ const FecharPedido = () => {
 
         <div className="botoes" id="botao">
           <input className="m-1  botaoEnviar" type="submit" name="botao" value="ENVIAR PEDIDO" />
-          <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" />
+          {/* <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" /> */}
         </div>
         <br />
       </form>

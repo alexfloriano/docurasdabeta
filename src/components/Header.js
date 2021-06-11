@@ -24,7 +24,7 @@ const Header = () => {
       <div className="container" >
         <div className="navbar-brand" >
           <Link className="navbar-item " to="/">
-            <img className = "logo" src={logo} alt="logotipo" ></img>
+            <img className="logo" src={logo} alt="logotipo" ></img>
           </Link>
           <button
             className={`navbar-burger ${burgerClass}`}
@@ -44,37 +44,37 @@ const Header = () => {
               to="/"
               onClick={closeMenu}
             >Home
-              </Link>
+            </Link>
             <Link
               className="navbar-item is-size-5"
               to="/produtos"
               onClick={closeMenu}
             >Produtos
-              </Link>
+            </Link>
             <Link
-             // className="navbar-item is-size-5"
-            //  to="/produtosgourmet"
-             // onClick={closeMenu}
-           // >Linha Gourmet
+              // className="navbar-item is-size-5"
+              //  to="/produtosgourmet"
+              // onClick={closeMenu}
+              // >Linha Gourmet
               //</Link>
-           // <Link
+              // <Link
               className="navbar-item is-size-5"
               to="/quemsomos"
               onClick={closeMenu}
             >Quem Somos
-              </Link>
+            </Link>
             <Link
               className="navbar-item is-size-5"
               to="/contato"
               onClick={closeMenu}
             >Contato
-              </Link>
+            </Link>
             <Link
               className="navbar-item is-size-5"
               to="/fecharpedido"
               onClick={closeMenu}
             >Fechar Pedido
-              </Link>
+            </Link>
           </div>
         </div>
       </div>

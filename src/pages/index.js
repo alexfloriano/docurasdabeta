@@ -20,7 +20,6 @@ const Home = () => {
 
   // const { produtos } = useContext(ProdutosContext);
   // produtos ? console.log(produtos) : null;
-
   return (
     <Layout>
       <SEO description="Site do Doçuras da Beta" keywords="Doces,Doçuras da Beta, Alimentação, Chocolates" />
@@ -34,20 +33,20 @@ const Home = () => {
         <div className="row">
           <h4 className="textoCentralizado marrom ">
             Seja Bem Vindo ao mundo dos chocolates
-      </h4>
-        </div>        
+          </h4>
+        </div>
 
-        <div className="row fotosHome">
-          <div className="col-sm-5">
+        <div className="row">
+          <div className="col-sm-6">
             <img className="imagem" src={fotoHome1} alt="logoGourmet" />
           </div>
-          <div className="col-sm-5">
+          <div className="col-sm-6">
             <img className="imagem" src={fotoHome2} alt="logoGourmet" />
           </div>
-          <div className="col-sm-5">
+          <div className="col-sm-6">
             <img className="imagem" src={fotoHome3} alt="logoGourmet" />
           </div>
-          <div className="col-sm-5">
+          <div className="col-sm-6">
             <img className="imagem" src={fotoHome4} alt="caixinhaBrigadeiros" />
           </div>
         </div>
@@ -64,19 +63,19 @@ const Home = () => {
               <FontAwesomeIcon icon={faFacebook} />
             </span>
           </a>
-          <a class="instagram" href="https://www.instagram.com/docesdabeta.cps/" target="_blank" rel="noreferrer" aria-label="instagram">
+          <a className="instagram" href="https://www.instagram.com/docesdabeta.cps/" target="_blank" rel="noreferrer" aria-label="instagram">
             <span className=" instagram icon is-large fa-3x" >
               <FontAwesomeIcon icon={faInstagram} />
             </span>
           </a>
-          <a class="whatsapp" href=" https://web.whatsapp.com/send?phone=5519988067156" target="_blank" aria-label="instagram">
+          <a className="whatsapp" href=" https://web.whatsapp.com/send?phone=5519988067156" target="_blank" aria-label="instagram">
             <span className="whatsapp icon is-large fa-3x" >
               <FontAwesomeIcon icon={faWhatsapp} />
             </span>
           </a>
 
 
-       </div>
+        </div>
       </div>
       <section className="section content is-size-4-desktop is-size-5-touch" >
         <Footer />

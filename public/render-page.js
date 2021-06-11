@@ -111,6 +111,7 @@ const { hot } = __webpack_require__(/*! react-hot-loader/root */ "./node_modules
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": hot(preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js"))),
+  "component---src-pages-fecharpedido-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/fecharpedido.js */ "./src/pages/fecharpedido.js"))),
   "component---src-pages-index-js": hot(preferDefault(__webpack_require__(/*! ./src/pages/index.js */ "./src/pages/index.js")))
   }
 
@@ -63147,6 +63148,248 @@ const NotFoundPage = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___defau
 
 /***/ }),
 
+/***/ "./src/pages/fecharpedido.js":
+/*!***********************************!*\
+  !*** ./src/pages/fecharpedido.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _components_Footer_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Footer/Footer */ "./src/components/Footer/Footer.js");
+/* harmony import */ var _context_ProdutosProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/ProdutosProvider */ "./src/context/ProdutosProvider.js");
+/* harmony import */ var gatsby_plugin_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gatsby-plugin-firebase */ "./node_modules/gatsby-plugin-firebase/index.js");
+
+
+
+
+ // criar função fechar pedido
+
+const FecharPedido = () => {
+  const {
+    0: pedidototal,
+    1: setPedidoTotal
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: cliente,
+    1: setCliente
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    nome: "",
+    fone: "",
+    email: ""
+  });
+  const {
+    0: erro,
+    1: setErro
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({}); // criamos uma variavel pedido, iniciando vazia 
+  //const [pedido, setPedido] = useState({});
+  // criando objeto cliente vazio.
+
+  const {
+    0: pedido,
+    1: setPedido
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    //nome do cliente: ,
+    fone: "",
+    email: "",
+    mensagem: ""
+  });
+  const {
+    produtos
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_ProdutosProvider__WEBPACK_IMPORTED_MODULE_3__["ProdutosContext"]); //console.log(produtos);
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    somarpedido();
+  });
+
+  const somarpedido = () => {
+    let soma = 0;
+    produtos.map(function (produto, index) {
+      return soma = soma + produto.quantidade * produto.preco;
+    });
+    setPedidoTotal(soma);
+    console.log(soma);
+  };
+
+  const EnviarPedido = event => {
+    console.log("Erro:", erro); // exibe os dados que o usúario digitou
+
+    event.preventDefault(); // criando as variaveis e alocando/vindo os dados do formulario
+
+    const nome = event.target.nome.value;
+    const fone = event.target.fone.value;
+    const email = event.target.email.value;
+    const pedidoAux = {
+      nomeCliente: nome,
+      telefoneCliente: fone,
+      emailCliente: email,
+      produtos: produtos
+    };
+    gatsby_plugin_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].firestore().collection('pedidos').add(pedidoAux).then(() => {
+      alert("pedido enviado com sucesso");
+      console.log("Pedido Armazenado com Sucesso!!!");
+      setCliente({
+        nome: "",
+        fone: "",
+        email: ""
+      });
+    }).catch(err => {
+      console.log("Problema para armazenar os dados no banco de dados.");
+      console.log(err);
+    });
+  };
+
+  const trataNome = event => {
+    const nome = event.target.value;
+    setErro({});
+
+    if (nome.length === 0) {
+      const erroAuxiliar = { ...erro,
+        nome: "Campo Nome não pode ser vazio!"
+      };
+      setErro(erroAuxiliar);
+    }
+
+    const clienteAux = { ...cliente,
+      nome: nome
+    };
+    setCliente(clienteAux);
+  };
+
+  const trataFone = event => {
+    const fone = event.target.value;
+    setErro({});
+
+    if (fone.length === 0) {
+      const erroAuxiliar = { ...erro,
+        fone: "Campo Telefone não pode ser vazio!"
+      };
+      setErro(erroAuxiliar);
+    } else {
+      // verifica se o usuário digitou corretamente um numero de telefone.
+      // const regexp = /^([1-9]{2})(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/;
+      // const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
+      const regexp = /^(\([1-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$/;
+
+      if (!regexp.test(fone)) {
+        const erroAuxiliar = { ...erro,
+          fone: "Digite seu telefone corretamente. o formato deve ser (99) 9999-9999"
+        };
+        setErro(erroAuxiliar);
+      }
+
+      ;
+    }
+
+    const clienteAux = { ...cliente,
+      fone: fone
+    };
+    console.log(clienteAux);
+    console.log(erro);
+    setCliente(clienteAux);
+  };
+
+  const trataEmail = event => {
+    const email = event.target.value;
+    setErro({});
+
+    if (email.length === 0) {
+      const erroAuxiliar = { ...erro,
+        email: "Campo E-mail não pode ser vazio!"
+      };
+      setErro(erroAuxiliar);
+    } else {
+      const regexpemail = /^[a-z0-9.]+@[a-z0-9.]/i;
+
+      if (!regexpemail.test(email)) {
+        const erroAuxiliar = { ...erro,
+          email: " digite seu email corretamente. o formato deve ser xxx@xxx.xxx"
+        };
+        setErro(erroAuxiliar);
+      }
+    }
+
+    const clienteAux = { ...cliente,
+      email: email
+    };
+    setCliente(clienteAux);
+    console.log(cliente.email);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Meu Carrinho"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Confira os produtos adicionados"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-bordered table-striped"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nome do Produto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Quantidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Pre\xE7o")), produtos.map(function (produto, index) {
+    let html = produto.quantidade > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, produto.nomedoproduto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, produto.quantidade), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, produto.preco)) : null;
+    return html;
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Total de Produtos R$  ", pedidototal), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: EnviarPedido,
+    className: "form"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    name: "nome",
+    "aria-describedby": "nome",
+    placeholder: "Seu nome",
+    value: cliente.nome,
+    onChange: trataNome
+  }), erro.nome ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "alert alert-danger",
+    role: "alert"
+  }, erro.nome) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    name: "fone",
+    "aria-describedby": "fone",
+    placeholder: "(99) 9999-9999",
+    value: cliente.fone,
+    onChange: trataFone
+  }), erro.fone ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "alert alert-danger",
+    role: "alert"
+  }, erro.fone) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "text",
+    className: "form-control",
+    name: "email",
+    "aria-describedby": "email",
+    placeholder: "Seu e-mail",
+    value: cliente.email,
+    onChange: trataEmail
+  }), erro.email ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "alert alert-danger",
+    role: "alert"
+  }, erro.email) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    id: "emailHelp",
+    className: "form-text text-muted"
+  }, "Nunca vamos compartilhar seu email, com ningu\xE9m.")), erro.mensagem ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "alert alert-danger",
+    role: "alert"
+  }, erro.mensagem) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "botoes",
+    id: "botao"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "m-1  botaoEnviar",
+    type: "submit",
+    name: "botao",
+    value: "ENVIAR PEDIDO"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FecharPedido);
+
+/***/ }),
+
 /***/ "./src/pages/index.css":
 /*!*****************************!*\
   !*** ./src/pages/index.css ***!
@@ -63263,7 +63506,7 @@ const Home = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
     icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faFacebook"]
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    class: "instagram",
+    className: "instagram",
     href: "https://www.instagram.com/docesdabeta.cps/",
     target: "_blank",
     rel: "noreferrer",
@@ -63273,7 +63516,7 @@ const Home = () => {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_5__["FontAwesomeIcon"], {
     icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_6__["faInstagram"]
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    class: "whatsapp",
+    className: "whatsapp",
     href: " https://web.whatsapp.com/send?phone=5519988067156",
     target: "_blank",
     "aria-label": "instagram"

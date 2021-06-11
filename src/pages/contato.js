@@ -30,19 +30,17 @@ const Contato = () => {
     console.log(telefone);
     // const mensagem = event.target.mensagem.value;
     // const email = event.target.email.value;
-
-    if (!erro) {
-      // grava os dados que o usuario digitou no BD    
-      firebase.firestore().collection('mensagens').add({
-        nome: event.target.nome.value,
-        fone: event.target.fone.value,
-        email: event.target.email.value,
-        mensagem: event.target.mensagem.value,
-      });
-    }else{
-      console.log ("Campo não validos");
-    }
-
+    // grava os dados que o usuario digitou no BD    
+    firebase.firestore().collection('mensagens').add({
+      nome: event.target.nome.value,
+      fone: event.target.fone.value,
+      email: event.target.email.value,
+      mensagem: event.target.mensagem.value,
+    })
+      .then(() => {
+        alert("Mensagem enviada com sucesso !!!");
+      })
+      .catch();
   }
 
   const trataNome = (event) => {
@@ -66,7 +64,7 @@ const Contato = () => {
       // verifica se o usuário digitou corretamente um numero de telefone.
       //const regexp = /\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
       // const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
-      const regexp = /^([1-9]{2})(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/;
+      const regexp = /^(\([1-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$/
 
       if (!regexp.test(fone)) {
         const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99)9999-9999" };
@@ -154,7 +152,7 @@ const Contato = () => {
               </div> : null}
             <div className="botoes" id="botao">
               <input className="m-1  botaoEnviar" type="submit" name="botao" value="ENVIAR" />
-              <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" />
+              {/* <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" /> */}
             </div>
             <br />
           </form>
