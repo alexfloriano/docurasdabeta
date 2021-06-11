@@ -5,9 +5,6 @@ import SEO from 'components/SEO';
 import Footer from '../components/Footer/Footer';
 import firebase from "gatsby-plugin-firebase"
 import 'firebase/firestore';
-// import { event } from "jquery";
-
-
 
 const Contato = () => {
   // criamos uma variavel erro , iniciando vazia 
@@ -46,8 +43,8 @@ const Contato = () => {
       console.log ("Campo não validos");
     }
 
-
   }
+
   const trataNome = (event) => {
     const nome = event.target.value;
     setErro({});
@@ -57,10 +54,8 @@ const Contato = () => {
     }
     const clienteAux = { ...cliente, nome: nome };
     setCliente(clienteAux);
-
-
-
   }
+
   const trataFone = (event) => {
     const fone = event.target.value;
     setErro({});
@@ -70,7 +65,9 @@ const Contato = () => {
     } else {
       // verifica se o usuário digitou corretamente um numero de telefone.
       //const regexp = /\s?(?:\()[0-9]{2}(?:\))\s?[0-9]{4,5}(?:-)[0-9]{4}$/;
-      const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
+      // const regexp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/;
+      const regexp = /^([1-9]{2})(?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$/;
+
       if (!regexp.test(fone)) {
         const erroAuxiliar = { ...erro, fone: "Digite seu telefone corretamente. o formato deve ser (99)9999-9999" };
         setErro(erroAuxiliar);
@@ -78,10 +75,7 @@ const Contato = () => {
     }
     const clienteAux = { ...cliente, fone: fone };
     setCliente(clienteAux);
-  } 
-
-
-
+  }
 
   const trataEmail = (event) => {
     const email = event.target.value;
@@ -96,14 +90,11 @@ const Contato = () => {
         const erroAuxiliar = { ...erro, email: " digite seu email corretamente. o formato deve ser xxx@xxx.xxx" };
         setErro(erroAuxiliar);
       }
-
     }
     const clienteAux = { ...cliente, email: email };
     setCliente(clienteAux);
     console.log(cliente.email);
   }
-
-
 
   const trataMensagem = (event) => {
     const mensagem = event.target.value;
@@ -114,11 +105,7 @@ const Contato = () => {
     }
     const clienteAux = { ...cliente, mensagem: mensagem };
     setCliente(clienteAux);
-
   }
-
-
-
 
   return (
     <Layout>
@@ -134,12 +121,8 @@ const Contato = () => {
           charset="utf-8"
         />
       </Helmet>
-
-
       <div className="Container">
         <div className="row">
-
-
           <form onSubmit={GravarMensagem} className="form">
             <div className="form-group">
               <input type="text" className="form-control" name="nome" aria-describedby="nome" placeholder="Seu nome" value={cliente.nome} onChange={trataNome} />
@@ -148,8 +131,6 @@ const Contato = () => {
                   {erro.nome}
                 </div> : null}
             </div>
-
-
             <div className="form-group">
               <input type="text" className="form-control" name="fone" aria-describedby="fone" placeholder="(99) 9999-9999" value={cliente.fone} onChange={trataFone} />
               {erro.fone ?
@@ -157,8 +138,6 @@ const Contato = () => {
                   {erro.fone}
                 </div> : null}
             </div>
-
-
             <div className="form-group">
               <input type="text" className="form-control" name="email" aria-describedby="email" placeholder="Seu e-mail" value={cliente.email} onChange={trataEmail} />
               {erro.email ?
@@ -167,16 +146,12 @@ const Contato = () => {
                 </div> : null}
               <small id="emailHelp" className="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
             </div>
-
-
             <textarea className="field" name="mensagem" cols="100" rows="10" placeholder="Preencha sua mensagem" value={cliente.mensagem} onChange={trataMensagem} >
             </textarea>
             {erro.mensagem ?
               <div class="alert alert-danger" role="alert">
                 {erro.mensagem}
               </div> : null}
-
-
             <div className="botoes" id="botao">
               <input className="m-1  botaoEnviar" type="submit" name="botao" value="ENVIAR" />
               <input className="m-1  btnLimpar" type="reset" name="btn" value="LIMPAR" />

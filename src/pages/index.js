@@ -59,12 +59,12 @@ const Home = () => {
         </div>
 
         <div className="has-text-centered">
-          <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" target="_blank" aria-label="facebook">
+          <a href="https://www.facebook.com/Do%C3%A7uras-da-Beta-960108510778018" target="_blank" rel="noreferrer" aria-label="facebook">
             <span className=" icon is-large fa-3x" >
               <FontAwesomeIcon icon={faFacebook} />
             </span>
           </a>
-          <a class="instagram" href="https://www.instagram.com/docesdabeta.cps/" target="_blank" aria-label="instagram">
+          <a class="instagram" href="https://www.instagram.com/docesdabeta.cps/" target="_blank" rel="noreferrer" aria-label="instagram">
             <span className=" instagram icon is-large fa-3x" >
               <FontAwesomeIcon icon={faInstagram} />
             </span>

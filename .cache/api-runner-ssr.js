@@ -1,14 +1,14 @@
 var plugins = [{
-      plugin: require('/home/alex/projeto/docurasdabeta/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/home/bordi/projects/docurasdabeta/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/alex/projeto/docurasdabeta/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      plugin: require('/home/bordi/projects/docurasdabeta/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/alex/projeto/docurasdabeta/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      plugin: require('/home/bordi/projects/docurasdabeta/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"icon":"src/assets/images/favicon.png","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":"040d1ccf1483450d01926285c371d093"},
     },{
-      plugin: require('/home/alex/projeto/docurasdabeta/gatsby-ssr'),
+      plugin: require('/home/bordi/projects/docurasdabeta/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
